@@ -1,0 +1,53 @@
+/* --------------------------------------------------------
+Fichier: grille-jeu.component.css
+Dev: Tom Strohmeier
+Date: 26-09-2022
+-------------------------------------------------------- */
+
+#form {
+    background-color: white;
+    color: #262548;
+    border-radius: 25px;
+}
+
+#jeu {
+    background-color: #262548;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+#form h3 {
+    font-weight: bold;
+}
+
+#form label {
+    color: 262548;
+    font-weight: bold;
+}
+
+#form button {
+    background-color: #262548;
+    color: white;
+}
+
+#caseNoir {
+    background-color: darkgrey;
+    color: darkgrey;
+    border: 2px solid black;
+}
+
+#caseBlanche {
+    background-color: White;
+    color: White;
+    border: 2px solid black
+}
+
+#caseNormal {
+    padding-left: 12px;
+    text-align: center;
+}
+
+#barCitation {
+    background-color: #262548;
+    color: white;
+}

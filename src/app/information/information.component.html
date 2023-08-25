@@ -1,0 +1,23 @@
+<!-- --------------------------------------------------------
+Fichier: information.component.html
+Dev: Tom Strohmeier
+Date: 26-09-2022
+-------------------------------------------------------- -->
+
+<div *ngIf="this.visible" class="container">
+
+    <!-- Section de saisie de la citation par l'utilisateur -->
+    <section id="form" class="m-5 p-5 row">
+        <h3 class="text-center">Bienvenue - Une citation, une grille de jeu, du plaisir à l'infini !</h3>
+
+        <!-- Barre de séparation pour le style -->
+        <div style="height: 10px; background-color: #262548" class="col-12"></div>
+
+        <!-- Zone de saisie utilisateur -->
+        <div class="col-12 pt-5">
+            <label class="col-12">Veuillez entrer votre citation ici: </label>
+            <input [(ngModel)]="clientCitation.BasicCitation" name="cita" class="col-12">
+            <button class="mt-2" (click)="play()">Générer votre grille de jeu !</button>
+        </div>
+    </section>
+</div>

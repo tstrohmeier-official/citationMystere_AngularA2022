@@ -1,0 +1,57 @@
+<!-- --------------------------------------------------------
+Fichier: grille-jeu.component.html
+Dev: Tom Strohmeier
+Date: 26-09-2022
+-------------------------------------------------------- -->
+
+<div *ngIf="this.visible" class="container">
+
+    <!-- Section d'affichage des grilles de jeux -->
+    <section id="form" class="m-5 p-5 row">
+
+        <h3 class="text-center">Voici votre grille de jeu !</h3>
+
+        <!-- Bande d'affichage de la citation visible/invisible -->
+        <div *ngIf="this.viewCitation === true; then visibleBlock else invisibleBlock"></div>
+        <!-- Visible -->
+        <ng-template #visibleBlock>
+            <div id="barCitation" class="col-12 text-center">{{currentCitation.BasicCitation}}</div>
+        </ng-template>
+        <!-- invisible -->
+        <ng-template #invisibleBlock>
+            <div id="barCitation" class="col-12" style="height: 10px;"></div>
+        </ng-template>
+
+        <!-- Tableau d'affichage du tableau du choix des lettres -->
+        <table class="table table-striped col-12">
+            <tbody>
+                <tr *ngFor="let a of selectionBoard.oneBoard">
+                    <td *ngFor="let c of a.Col">
+                        <span id="caseNormal">{{c.Value}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Barre de séparation visuelle -->
+        <div style="height: 5px; background-color: #262548; margin-bottom: 15px;" class="col-12"></div>
+
+        <!-- Tableau d'affichage de la grille trouée -->
+        <table class="table table-striped col-12">
+            <tbody>
+                <tr *ngFor="let col of playBoard.oneBoard">
+                    <td *ngFor="let i of col.Col">
+                        <span id="caseNoir" *ngIf="i.Status ==='empty'">_X_</span>
+                        <span id="caseBlanche" *ngIf="i.Status === 'filled'">_X_</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Boutton d'affichage de la citation et d'une nouvelle partie -->
+        <div class="row">
+            <button (click)="citationVisibilityToggle()" class="col-2">Voir la citation</button>
+            <button (click)="restart()" class="offset-8 col-2">Nouvelle citation</button>
+        </div>
+    </section>
+</div>

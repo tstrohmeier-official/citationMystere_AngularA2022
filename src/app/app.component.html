@@ -1,0 +1,25 @@
+<!--
+--------------------------------------------------------
+Fichier: app.component.html
+Dev: Tom Strohmeier
+Date: 26-09-2022
+--------------------------------------------------------
+-->
+
+<div class="container-fluid">
+
+  <!-- Bande de présentation du projet -->
+  <section class="row">
+    <article style="color: white; border-bottom: 0.5px solid white;" class="p-3">
+      <h1>Citation Mystère</h1>
+      <h2>par Tom Strohmeier</h2>
+    </article>
+  </section>
+
+  <!-- Section d'interaction utilisateur pour saisie de la citation -->
+  <app-information #userInput (acceptedCitation)="grille.onAcceptedCitation($event)">
+  </app-information>
+
+  <!-- Section d'affichage de la grille de jeu de l'utilisateur -->
+  <app-grille-jeu #grille (newGame)="userInput.onNewGame()"></app-grille-jeu>
+</div>

@@ -1,0 +1,25 @@
+/* --------------------------------------------------------
+Fichier: information.component.css
+Dev: Tom Strohmeier
+Date: 26-09-2022
+-------------------------------------------------------- */
+
+#form {
+    background-color: white;
+    color: #262548;
+    border-radius: 25px;
+}
+
+#form h3 {
+    font-weight: bold;
+}
+
+#form label {
+    color: 262548;
+    font-weight: bold;
+}
+
+#form button {
+    background-color: #262548;
+    color: white;
+}
